@@ -134,31 +134,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00058"></a>00058 <span class="comment">// Local includes</span>
 <a name="l00059"></a>00059 <span class="preprocessor">#include &quot;<a class="code" href="DartNode_8h.html" title="Class that is a subclass of osg::Group, which is the main object for DART visualization in OpenSceneG...">DartNode.h</a>&quot;</span>
 <a name="l00060"></a>00060 
-<a name="l00066"></a>00066 <span class="keyword">namespace </span>osgDart {
-<a name="l00067"></a>00067 
-<a name="l00073"></a><a class="code" href="classosgDart_1_1DartNodeCallback.html">00073</a> <span class="keyword">class </span><a class="code" href="classosgDart_1_1DartNodeCallback.html" title="Callback class for updating a DartNode. This class must subclass osg::NodeCallback.">DartNodeCallback</a> : <span class="keyword">public</span> osg::NodeCallback
-<a name="l00074"></a>00074 {
-<a name="l00075"></a>00075 <span class="keyword">public</span>:
-<a name="l00079"></a><a class="code" href="classosgDart_1_1DartNodeCallback.html#ae7ecff480f4e9f72d2b9d4ef5b4de1a3">00079</a>     <a class="code" href="classosgDart_1_1DartNodeCallback.html#ae7ecff480f4e9f72d2b9d4ef5b4de1a3" title="Constructs a DartNodeCallback object.">DartNodeCallback</a>(){}
-<a name="l00080"></a>00080 
-<a name="l00088"></a><a class="code" href="classosgDart_1_1DartNodeCallback.html#a4a6040c4db4bc28eb6534a5af1a15606">00088</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classosgDart_1_1DartNodeCallback.html#a4a6040c4db4bc28eb6534a5af1a15606" title="Core function of the callback where everything happens. This is the function that gets called when a ...">operator()</a>(osg::Node* node, osg::NodeVisitor* visitor)
-<a name="l00089"></a>00089     {
-<a name="l00090"></a>00090         osg::ref_ptr&lt;DartNode&gt; dartNode = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="classosgDart_1_1DartNode.html" title="Class that is a subclass of osg::Group, which is the main object for DART visualization in OpenSceneG...">DartNode</a>*<span class="keyword">&gt;</span> (node);
+<a name="l00061"></a>00061 <span class="keyword">namespace </span>osgDart {
+<a name="l00062"></a>00062 
+<a name="l00068"></a><a class="code" href="classosgDart_1_1DartNodeCallback.html">00068</a> <span class="keyword">class </span><a class="code" href="classosgDart_1_1DartNodeCallback.html" title="Callback class for updating a DartNode. This class must subclass osg::NodeCallback.">DartNodeCallback</a> : <span class="keyword">public</span> osg::NodeCallback
+<a name="l00069"></a>00069 {
+<a name="l00070"></a>00070 <span class="keyword">public</span>:
+<a name="l00074"></a><a class="code" href="classosgDart_1_1DartNodeCallback.html#ae7ecff480f4e9f72d2b9d4ef5b4de1a3">00074</a>     <a class="code" href="classosgDart_1_1DartNodeCallback.html#ae7ecff480f4e9f72d2b9d4ef5b4de1a3" title="Constructs a DartNodeCallback object.">DartNodeCallback</a>(){}
+<a name="l00075"></a>00075 
+<a name="l00083"></a><a class="code" href="classosgDart_1_1DartNodeCallback.html#a4a6040c4db4bc28eb6534a5af1a15606">00083</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classosgDart_1_1DartNodeCallback.html#a4a6040c4db4bc28eb6534a5af1a15606" title="Core function of the callback where everything happens. This is the function that gets called when a ...">operator()</a>(osg::Node* node, osg::NodeVisitor* visitor)
+<a name="l00084"></a>00084     {
+<a name="l00085"></a>00085         osg::ref_ptr&lt;DartNode&gt; dartNode = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="classosgDart_1_1DartNode.html" title="Class that is a subclass of osg::Group, which is the main object for DART visualization in OpenSceneG...">DartNode</a>*<span class="keyword">&gt;</span> (node);
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087         <span class="comment">// If the node is valid, update it</span>
+<a name="l00088"></a>00088         <span class="keywordflow">if</span>(dartNode) {
+<a name="l00089"></a>00089             dartNode-&gt;<a class="code" href="classosgDart_1_1DartNode.html#a97520c87393060cc4560384f9411940b" title="Updates the transforms of all the dart objects in the SkeletonNodes of the DartNode for the next cull...">update</a>();
+<a name="l00090"></a>00090         }
 <a name="l00091"></a>00091 
-<a name="l00092"></a>00092         <span class="comment">// If the node is valid, update it</span>
-<a name="l00093"></a>00093         <span class="keywordflow">if</span>(dartNode) {
-<a name="l00094"></a>00094             dartNode-&gt;<a class="code" href="classosgDart_1_1DartNode.html#a97520c87393060cc4560384f9411940b" title="Updates the transforms of all the dart objects in the SkeletonNodes of the DartNode for the next cull...">update</a>();
-<a name="l00095"></a>00095         }
-<a name="l00096"></a>00096 
-<a name="l00097"></a>00097         <span class="comment">// Continue traversing the scenegraph</span>
-<a name="l00098"></a>00098         traverse(node, visitor);
-<a name="l00099"></a>00099     }
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101 }; <span class="comment">// end class DartNodeCallback</span>
-<a name="l00102"></a>00102 
-<a name="l00103"></a>00103 } <span class="comment">// end namespace osgDart</span>
-<a name="l00104"></a>00104 
-<a name="l00105"></a>00105 <span class="preprocessor">#endif // DARTNODE_CALLBACK_H</span>
+<a name="l00092"></a>00092         <span class="comment">// Continue traversing the scenegraph</span>
+<a name="l00093"></a>00093         traverse(node, visitor);
+<a name="l00094"></a>00094     }
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096 }; <span class="comment">// end class DartNodeCallback</span>
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098 } <span class="comment">// end namespace osgDart</span>
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100 <span class="preprocessor">#endif // DARTNODE_CALLBACK_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -177,7 +177,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 2 2014 01:45:27 for Grip-Reloaded by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 2 2014 02:53:01 for Grip-Reloaded by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

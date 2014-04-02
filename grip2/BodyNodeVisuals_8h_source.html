@@ -135,55 +135,55 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00059"></a>00059 <span class="preprocessor">#include &quot;../osgGolems/Axes.h&quot;</span>
 <a name="l00060"></a>00060 <span class="preprocessor">#include &quot;../osgGolems/Line.h&quot;</span>
 <a name="l00061"></a>00061 
-<a name="l00067"></a>00067 <span class="keyword">namespace </span>osgDart {
-<a name="l00068"></a>00068 
-<a name="l00073"></a><a class="code" href="classosgDart_1_1BodyNodeVisuals.html">00073</a> <span class="keyword">class </span><a class="code" href="classosgDart_1_1BodyNodeVisuals.html" title="Class that holds all the visualization nodes for a link, excluding the actual link.">BodyNodeVisuals</a> : <span class="keyword">public</span> osg::MatrixTransform
-<a name="l00074"></a>00074 {
-<a name="l00075"></a>00075 <span class="keyword">public</span>:
-<a name="l00079"></a>00079     <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#ab64aa5d9f08bd29d85399867f85a733e" title="Constructs a BodyNodeVisuals object.">BodyNodeVisuals</a>();
+<a name="l00062"></a><a class="code" href="namespaceosgDart.html">00062</a> <span class="keyword">namespace </span>osgDart {
+<a name="l00063"></a>00063 
+<a name="l00068"></a><a class="code" href="classosgDart_1_1BodyNodeVisuals.html">00068</a> <span class="keyword">class </span><a class="code" href="classosgDart_1_1BodyNodeVisuals.html" title="Class that holds all the visualization nodes for a link, excluding the actual link.">BodyNodeVisuals</a> : <span class="keyword">public</span> osg::MatrixTransform
+<a name="l00069"></a>00069 {
+<a name="l00070"></a>00070 <span class="keyword">public</span>:
+<a name="l00074"></a>00074     <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#ab64aa5d9f08bd29d85399867f85a733e" title="Constructs a BodyNodeVisuals object.">BodyNodeVisuals</a>();
+<a name="l00075"></a>00075 
+<a name="l00079"></a>00079     <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#a4b184930adb9b0254d1117cf1a3705ee" title="Destructs a BodyNodeVisuals object.">~BodyNodeVisuals</a>();
 <a name="l00080"></a>00080 
-<a name="l00084"></a>00084     <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#a4b184930adb9b0254d1117cf1a3705ee" title="Destructs a BodyNodeVisuals object.">~BodyNodeVisuals</a>();
-<a name="l00085"></a>00085 
-<a name="l00090"></a>00090     <span class="keywordtype">void</span> <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#aa1467a7270ebef3c25f30de3e7cc1595" title="Adds a joint axis node to the class.">addJointAxis</a>();
-<a name="l00091"></a>00091 
-<a name="l00096"></a>00096     <span class="keywordtype">void</span> <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#ae15b002ad7b8bedd69048adfeafb5b8a" title="Adds a link frame node to the class.">addBodyNodesAxes</a>();
-<a name="l00097"></a>00097 
-<a name="l00103"></a>00103     <span class="keywordtype">void</span> <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#ad92c3ec649f2d458185e3d7455e72241" title="Adds a center of mass sphere node to the class Not implemented yet.">addCenterOfMass</a>();
-<a name="l00104"></a>00104 
-<a name="l00109"></a>00109     osg::MatrixTransform* <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#a9abf7d2d852b7009bd6a869559ad3fe1" title="Gets the osg::MatrixTransform pointer that holds the joint axis node.">getJointAxisTF</a>();
-<a name="l00110"></a>00110 
-<a name="l00115"></a>00115     osg::MatrixTransform* <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#ad71471997bab5809307536f493fed282" title="Gets the osg::MatrixTransform pointer that holds the link frame node.">getBodyNodeAxesTF</a>();
-<a name="l00116"></a>00116 
-<a name="l00122"></a>00122     <span class="keywordtype">void</span> <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#a5df2310f7a76de7bb9e1e069a647f73c" title="Sets the color of the joint axis node.">setJointAxisColor</a>(<span class="keyword">const</span> osg::Vec4 &amp;color);
-<a name="l00123"></a>00123 
-<a name="l00129"></a>00129     <span class="keywordtype">void</span> <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#a9ef642f6c27c1c285f1e05cea2558359" title="Sets the color of the link frame node.">setBodyNodeAxesColors</a>(<span class="keyword">const</span> osg::Vec4&amp; xAxis, <span class="keyword">const</span> osg::Vec4&amp; yAxis, <span class="keyword">const</span> osg::Vec4&amp; zAxis);
-<a name="l00130"></a>00130 
-<a name="l00135"></a>00135     <span class="keywordtype">void</span> <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#ac935f4802cd4742ff1add18e02357b17" title="Sets the line width of the joint axis and link frame axes. This is used only if the joint axis and li...">setLineWidth</a>(<span class="keywordtype">float</span> lineWidth);
-<a name="l00136"></a>00136 
-<a name="l00137"></a>00137 
-<a name="l00138"></a>00138 <span class="keyword">protected</span>:
-<a name="l00143"></a>00143     osg::Geode* <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#a3946aa23520e45dd56166705e7b26ea8" title="Makes a joint axis arrow node.">_makeJointAxis</a>();
-<a name="l00144"></a>00144 
-<a name="l00149"></a>00149     osg::Geode* <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#a4166bb653593102d1221385ea372a0c8" title="Make a link frame node with three axes.">_makeBodyNodeAxes</a>();
-<a name="l00150"></a>00150 
-<a name="l00156"></a>00156     <span class="keywordtype">void</span> <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#a01316f2467e783f76b6ce84a8b6d8ee4" title="Set the modes of the geode passed in.">_setGeodeModes</a>(osg::Geode* geode);
-<a name="l00157"></a>00157 
-<a name="l00159"></a><a class="code" href="classosgDart_1_1BodyNodeVisuals.html#a25facb960461295bb60625fc530632c8">00159</a>     osg::MatrixTransform* <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#a25facb960461295bb60625fc530632c8" title="The osg::MatrixTransform pointer holding the joint axis node.">_jointAxisTF</a>;
-<a name="l00160"></a>00160 
-<a name="l00162"></a><a class="code" href="classosgDart_1_1BodyNodeVisuals.html#aa313f363911d83f812076aa346462d8a">00162</a>     osg::MatrixTransform* <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#aa313f363911d83f812076aa346462d8a" title="The osg::MatrixTransform pointer holding the link frame node.">_bodyNodeAxesTF</a>;
-<a name="l00163"></a>00163 
-<a name="l00165"></a><a class="code" href="classosgDart_1_1BodyNodeVisuals.html#ad26bed8971c8922764d0b8db239ebec9">00165</a>     <a class="code" href="classosgGolems_1_1Line.html" title="Class that subclasses osg::Geode to create x,y,z axes.">osgGolems::Line</a>* <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#ad26bed8971c8922764d0b8db239ebec9" title="The osgGolems::Line pointer representing the joint axis.">_jointAxis</a>;
-<a name="l00166"></a>00166 
-<a name="l00168"></a><a class="code" href="classosgDart_1_1BodyNodeVisuals.html#af3d667dc0688b5585f56ff673fb28f2e">00168</a>     <a class="code" href="classosgGolems_1_1Axes.html" title="Class that subclasses osg::Geode to create x,y,z axes.">osgGolems::Axes</a>* <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#af3d667dc0688b5585f56ff673fb28f2e" title="The osgGolems::Axes pointer representing the link frame.">_bodyNodeAxes</a>;
-<a name="l00169"></a>00169 
-<a name="l00171"></a><a class="code" href="classosgDart_1_1BodyNodeVisuals.html#aaaaab7573b4ad7791cbec31fc4cf3de4">00171</a>     osg::LineWidth* <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#aaaaab7573b4ad7791cbec31fc4cf3de4" title="The osg::LineWidth pointer holding the line width parameter of the 2D objects in the class...">_lineWidth</a>;
-<a name="l00172"></a>00172 
-<a name="l00174"></a><a class="code" href="classosgDart_1_1BodyNodeVisuals.html#aa7c708e3d232c170c6fbb25e91f863ab">00174</a>     osg::CullFace* <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#aa7c708e3d232c170c6fbb25e91f863ab" title="The osg::CullFace pointer holding the cull setting of the class.">_cullFace</a>;
-<a name="l00175"></a>00175 };
-<a name="l00176"></a>00176 
-<a name="l00177"></a>00177 } <span class="comment">// end namespace osgDart</span>
-<a name="l00178"></a>00178 
-<a name="l00179"></a>00179 <span class="preprocessor">#endif // BODYNODE_VISUALS_H</span>
+<a name="l00085"></a>00085     <span class="keywordtype">void</span> <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#aa1467a7270ebef3c25f30de3e7cc1595" title="Adds a joint axis node to the class.">addJointAxis</a>();
+<a name="l00086"></a>00086 
+<a name="l00091"></a>00091     <span class="keywordtype">void</span> <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#ae15b002ad7b8bedd69048adfeafb5b8a" title="Adds a link frame node to the class.">addBodyNodesAxes</a>();
+<a name="l00092"></a>00092 
+<a name="l00098"></a>00098     <span class="keywordtype">void</span> <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#ad92c3ec649f2d458185e3d7455e72241" title="Adds a center of mass sphere node to the class Not implemented yet.">addCenterOfMass</a>();
+<a name="l00099"></a>00099 
+<a name="l00104"></a>00104     osg::MatrixTransform* <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#a9abf7d2d852b7009bd6a869559ad3fe1" title="Gets the osg::MatrixTransform pointer that holds the joint axis node.">getJointAxisTF</a>();
+<a name="l00105"></a>00105 
+<a name="l00110"></a>00110     osg::MatrixTransform* <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#ad71471997bab5809307536f493fed282" title="Gets the osg::MatrixTransform pointer that holds the link frame node.">getBodyNodeAxesTF</a>();
+<a name="l00111"></a>00111 
+<a name="l00117"></a>00117     <span class="keywordtype">void</span> <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#a5df2310f7a76de7bb9e1e069a647f73c" title="Sets the color of the joint axis node.">setJointAxisColor</a>(<span class="keyword">const</span> osg::Vec4 &amp;color);
+<a name="l00118"></a>00118 
+<a name="l00124"></a>00124     <span class="keywordtype">void</span> <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#a9ef642f6c27c1c285f1e05cea2558359" title="Sets the color of the link frame node.">setBodyNodeAxesColors</a>(<span class="keyword">const</span> osg::Vec4&amp; xAxis, <span class="keyword">const</span> osg::Vec4&amp; yAxis, <span class="keyword">const</span> osg::Vec4&amp; zAxis);
+<a name="l00125"></a>00125 
+<a name="l00130"></a>00130     <span class="keywordtype">void</span> <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#ac935f4802cd4742ff1add18e02357b17" title="Sets the line width of the joint axis and link frame axes. This is used only if the joint axis and li...">setLineWidth</a>(<span class="keywordtype">float</span> lineWidth);
+<a name="l00131"></a>00131 
+<a name="l00132"></a>00132 
+<a name="l00133"></a>00133 <span class="keyword">protected</span>:
+<a name="l00138"></a>00138     osg::Geode* <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#a3946aa23520e45dd56166705e7b26ea8" title="Makes a joint axis arrow node.">_makeJointAxis</a>();
+<a name="l00139"></a>00139 
+<a name="l00144"></a>00144     osg::Geode* <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#a4166bb653593102d1221385ea372a0c8" title="Make a link frame node with three axes.">_makeBodyNodeAxes</a>();
+<a name="l00145"></a>00145 
+<a name="l00151"></a>00151     <span class="keywordtype">void</span> <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#a01316f2467e783f76b6ce84a8b6d8ee4" title="Set the modes of the geode passed in.">_setGeodeModes</a>(osg::Geode* geode);
+<a name="l00152"></a>00152 
+<a name="l00154"></a><a class="code" href="classosgDart_1_1BodyNodeVisuals.html#a25facb960461295bb60625fc530632c8">00154</a>     osg::MatrixTransform* <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#a25facb960461295bb60625fc530632c8" title="The osg::MatrixTransform pointer holding the joint axis node.">_jointAxisTF</a>;
+<a name="l00155"></a>00155 
+<a name="l00157"></a><a class="code" href="classosgDart_1_1BodyNodeVisuals.html#aa313f363911d83f812076aa346462d8a">00157</a>     osg::MatrixTransform* <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#aa313f363911d83f812076aa346462d8a" title="The osg::MatrixTransform pointer holding the link frame node.">_bodyNodeAxesTF</a>;
+<a name="l00158"></a>00158 
+<a name="l00160"></a><a class="code" href="classosgDart_1_1BodyNodeVisuals.html#ad26bed8971c8922764d0b8db239ebec9">00160</a>     <a class="code" href="classosgGolems_1_1Line.html" title="Class that subclasses osg::Geode to create x,y,z axes.">osgGolems::Line</a>* <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#ad26bed8971c8922764d0b8db239ebec9" title="The osgGolems::Line pointer representing the joint axis.">_jointAxis</a>;
+<a name="l00161"></a>00161 
+<a name="l00163"></a><a class="code" href="classosgDart_1_1BodyNodeVisuals.html#af3d667dc0688b5585f56ff673fb28f2e">00163</a>     <a class="code" href="classosgGolems_1_1Axes.html" title="Class that subclasses osg::Geode to create x,y,z axes.">osgGolems::Axes</a>* <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#af3d667dc0688b5585f56ff673fb28f2e" title="The osgGolems::Axes pointer representing the link frame.">_bodyNodeAxes</a>;
+<a name="l00164"></a>00164 
+<a name="l00166"></a><a class="code" href="classosgDart_1_1BodyNodeVisuals.html#aaaaab7573b4ad7791cbec31fc4cf3de4">00166</a>     osg::LineWidth* <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#aaaaab7573b4ad7791cbec31fc4cf3de4" title="The osg::LineWidth pointer holding the line width parameter of the 2D objects in the class...">_lineWidth</a>;
+<a name="l00167"></a>00167 
+<a name="l00169"></a><a class="code" href="classosgDart_1_1BodyNodeVisuals.html#aa7c708e3d232c170c6fbb25e91f863ab">00169</a>     osg::CullFace* <a class="code" href="classosgDart_1_1BodyNodeVisuals.html#aa7c708e3d232c170c6fbb25e91f863ab" title="The osg::CullFace pointer holding the cull setting of the class.">_cullFace</a>;
+<a name="l00170"></a>00170 };
+<a name="l00171"></a>00171 
+<a name="l00172"></a>00172 } <span class="comment">// end namespace osgDart</span>
+<a name="l00173"></a>00173 
+<a name="l00174"></a>00174 <span class="preprocessor">#endif // BODYNODE_VISUALS_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -202,7 +202,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 2 2014 01:45:27 for Grip-Reloaded by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 2 2014 02:53:01 for Grip-Reloaded by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
